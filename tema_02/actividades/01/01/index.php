@@ -7,13 +7,11 @@
 <body>
 
     <?php
-        echo "<h1>Bienvenidos a mi página web</h1>";
+        $titulo = "Bienvenidos a mi página web";
 
-        echo "<p>
-                Este es un párrafo escrito en PHP.<br>
-                Contiene al menos tres líneas de texto.<br>
-                Estamos aprendiendo a crear páginas web dinámicas.
-              </p>";
+        $parrafo = "Este es un párrafo escrito en PHP 
+                    Contiene al menos tres líneas de texto 
+                    Estamos aprendiendo a crear páginas web dinámica";
 
         echo '<a href="http://www.elpais.es">Visitar El País</a>';
     ?>
