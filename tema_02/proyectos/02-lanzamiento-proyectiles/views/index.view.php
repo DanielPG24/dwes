@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto 2.2 - Calculo Lanzamiento de Proyectiles</title>
+    <title>Proyecto 2.2 - Lanzamiento de Proyectiles</title>
 
     <!-- css bootstrap básico 5.3.8 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 
         <!-- cabecera de la aplicación -->
         <header class="bg-primary text-white p-3 mb-3">
-            <i class="bi bi-rocket-takeoff"></i>
+            <i class="bi bi-rocket-takeoff-fill"></i>
             <span class="fs-6">Proyecto 2.2 - Lanzamiento de Proyectiles</span>
         </header>
     
@@ -27,24 +27,24 @@
 
             <!-- Formulario de la calculadora -->
             <form method="post">
-                <!-- Campo velocidad inicial -->
+                <!-- campo velocidad inicial -->
                 <div class="mb-3">
-                    <label for="v0" class="form-label">Velocidad Inicial</label>
-                    <input type="number" class="form-control" step="0.01" placeholder="0.00" id="v0" name="v0" required>   
-                    <small class="text-muted">Velocidad en m/s</small>
+                    <label for="velocidad_inicial" class="form-label">Velocidad Inicial (m/s):</label>
+                    <input type="number" class="form-control" step="0.01" placeholder="0.00" id="velocidad_inicial" name="velocidad_inicial" required>   
+                    <small class="text-muted">Velocidad inicial del proyectil en metros por segundo (m/s).</small>
                 </div>
 
-                <!-- Ángulo de Lanzamiento -->
+                <!-- Campo ángulo de lanzamiento -->
                 <div class="mb-3">
-                    <label for="angulo_lanzamiento" class="form-label">Ángulo de Lanzamiento</label>
+                    <label for="angulo_lanzamiento" class="form-label">Ángulo de Lanzamiento (grados):</label>
                     <input type="number" class="form-control" step="0.01" placeholder="0.00" id="angulo_lanzamiento" name="angulo_lanzamiento" required>   
-                    <small class="text-muted">Ángulo en grados</small>
+                    <small class="text-muted">Ángulo de lanzamiento del proyectil en grados.</small>
                 </div>
 
                 <!-- botones de  acción -->
                 <div class="btn-group" role="group">
                     <button type="reset" class="btn btn-danger">Borrar</button>
-                    <button type="submit" class="btn btn-warning" name="operacion" value="calculo" formaction="calcular.php">Cálculos del lanzamiento</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="calcular" formaction="../calcular.php">Calcular</button>
                 </div>
 
             </form>
@@ -57,7 +57,7 @@
         <footer class="footer mt-auto py-3 fixed-bottom bg-light">
             <div class="container">
                 <span class="text-muted">&copy; 2026
-                    Daniel Pino Gómez - DWES - 2º DAW - Curso 26/27
+                    Pablo Bocanegra Corrales - DWES - 2º DAW - Curso 26/27
                 </span>
             </div>
         </footer>

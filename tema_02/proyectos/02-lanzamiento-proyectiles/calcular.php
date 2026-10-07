@@ -18,29 +18,26 @@
 // Modelo
 
 //definir constante
-define("g", 9.81);
+define ('GRAVEDAD', 9.81); // Aceleración debida a la gravedad en m/s^2
 
-//Obtenemos los valores del formulario
-$v0 = (float)$_POST['v0'] ?? 0;
-$angulo_lanzamiento = (float)$_POST['angulo_lanzamiento'] ?? 0;
+$velocidad_inicial = (float) $_POST['velocidad_inicial'] ?? 0;
+$angulo_lanzamiento = (float) $_POST['angulo_lanzamiento'] ?? 0;
 
-// Convertimos el ángulo de grados a radianes
-$angulo_radianes = deg2rad($angulo_lanzamiento);
+// Convertir ángulo de grados a radianes
+$angulo_radianes = deg2rad($angulo_lanzamiento); // Convertir ángulo a radianes
+ 
+// calcular la velocidad inicial vertical y horizontal
+$velocidad_inicial_vertical = $velocidad_inicial * sin($angulo_radianes);
+$velocidad_inicial_horizontal = $velocidad_inicial * cos($angulo_radianes);
 
-//Calculamos la velocidad inicial horizontal
-$v0x = $v0 * cos($angulo_radianes);
+//calcular el tiempo de vuelo del proyectil
+$tiempo_vuelo = (2 * $velocidad_inicial_vertical) / GRAVEDAD;
 
-//Calculamos la velocidad inicial vertical
-$v0y = $v0 * sin($angulo_radianes);
+//calcular la altura máxima del proyectil
+$altura_maxima = ($velocidad_inicial_vertical ** 2) / (2 * GRAVEDAD);
 
-//Calculamos la altura máxima
-$altura_maxima = ($v0y)**2 / (2 * g);
+//calcular el alcance máximo del proyectil
+$alcance_maximo = (($velocidad_inicial ** 2) * sin(2 * $angulo_radianes)) / GRAVEDAD;
 
-//Calculamos el tiempo de vuelo
-$tiempo_vuelo = (2 * $v0y) / g;
 
-//Calculamos la distancia máxima
-$distancia_maxima = $v0x * $tiempo_vuelo;
-
-// Vista
 include 'views/calculos.view.php';
